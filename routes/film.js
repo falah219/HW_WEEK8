@@ -4,6 +4,7 @@ const route = express.Router();
 
 
 // Get semua data film
+// localhost:3000/film/
 route.get('/', (req, res) => {
     const db = 'SELECT * FROM film'
 
@@ -15,7 +16,8 @@ route.get('/', (req, res) => {
 });
 
 
-// Get data film berdasarkan id 
+// Get data film berdasarkan id
+// localhost:3000/film/1 
 route.get('/:id', (req, res) => {
     const id = req.params.id;
     const db = `SELECT * FROM film WHERE film_id = ${id}` ;
@@ -28,6 +30,7 @@ route.get('/:id', (req, res) => {
 })
 
 // Get data film berdasarkan nama category (Action, Animation, Children) 
+// localhost:3000/film/category/Action
 route.get('/category/:slug', (req, res) => {
     const slug = req.params.slug;
     const db = `SELECT * FROM film f
